@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Dashboard, { dashboardLoader } from './pages/Dashboard'
+import NotFoundPage from './pages/NotFoundPage'
+import Search from './pages/Search'
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <>
+            <Router>
+                <Routes>
+                    <Route path='/' element={<Dashboard/>} loader={dashboardLoader}/>
+                    <Route path='/search/:id' element={<Search/>}/>
+                    <Route path='*' element={<NotFoundPage/>}/>
+                </Routes>
+            </Router>
+        </>
+    )
 }
-
-export default App;
+export default App
