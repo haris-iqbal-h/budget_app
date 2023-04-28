@@ -1,5 +1,5 @@
 import React from 'react'
-import Dashboard, { dashboardLoader } from './pages/Dashboard'
+import Dashboard from './pages/Dashboard'
 import NotFoundPage from './pages/NotFoundPage'
 import Search from './pages/Search'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
@@ -9,7 +9,7 @@ const App = () => {
         <>
             <Router>
                 <Routes>
-                    <Route path='/' element={<Dashboard/>} loader={dashboardLoader}/>
+                    <Route path='/' element={<Dashboard/>}/>
                     <Route path='/search/:id' element={<Search/>}/>
                     <Route path='*' element={<NotFoundPage/>}/>
                 </Routes>
