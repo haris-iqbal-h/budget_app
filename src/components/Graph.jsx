@@ -45,7 +45,7 @@ const Graph = () => {
             </div>
         </div>
         <div className="flex flex-col py-10 gap-4">
-            <Label></Label>
+            <Label/>
         </div>
     </div>
     )
