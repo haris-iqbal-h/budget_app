@@ -1,8 +1,7 @@
 const routes=require('express').Router()
+const controller=require('../controller/controller')
 
 routes.route('/api/categories')
-    .get((req,res)=>{
-        res.json("get request from categories")
-    })
+    .get(controller.createCategories())
 
 module.exports =routes
